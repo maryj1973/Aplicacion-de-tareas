@@ -6,11 +6,15 @@ import { crearTodoHtml } from './js/componentes';
 
 export const todoList=new TodoList();
 
-const tarea=new Todo('Aprender Javascript');
+// const tarea=new Todo('Aprender Javascript');
 
-todoList.nuevoTodo(tarea);
+// todoList.nuevoTodo(tarea);
 
-console.log(todoList);
+// console.log(todoList);
 
 
-crearTodoHtml(tarea);
+// crearTodoHtml(tarea);
+
+
+// localStorage.setItem('mi-key','ABC1234');
+// sesionStorage.setItem('mi-key','ABC1234');
