@@ -1,53 +1,49 @@
-
 const HtmlWebpack=require('html-webpack-plugin');
 const MiniCssExtract = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports={
-    mode: 'development', 
+    mode: 'development',
     output:{
         clean:true
     },
-    module: {
-        rules: [
+    module:{
+        rules:[
             {
-                test: /\.html$/,
-                loader: 'html-loader',
+                test:/\.html$/,
+                loader:'html-loader',
                 options:{
                     sources:false
                 }
-
             },
             {
-                test: /\.css$/,  
-                exclude: /styles.css$/,
-                use: ['style-loader', 'css-loader']
+                test:/\.css$/,
+                exclude:/styles.css$/,
+                use:['style-loader','css-loader']
             },
             {
-                test: /styles.css$/,
+                test:/styles.css$/,
                 use:[MiniCssExtract.loader,'css-loader']
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                loader: 'file-loader'
+                test:/\.(png|jpe?g|gif|svg)$/,
+                loader:'file-loader'
             }
-
-        ]
+        ],
     },
-
-    optimization: {},
-    plugins: [
+    optimization:{},
+    plugins:[
         new HtmlWebpack({
-            title: 'Mi primer webpack',
-            template: './src/index.html'
+            title:'Mi primer webpack',
+            template:'./src/index.html'
         }),
         new MiniCssExtract({
-            filename: '[name].css', 
+            filename:'[name].css',
             ignoreOrder:false
         }),
         new CopyPlugin({
-            patterns: [
-                {from:'src/assets', to:'assets'}
+            patterns:[
+                {from:'src/assets',to:'assets'}
             ]
         })
     ]
