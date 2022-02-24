@@ -52,7 +52,9 @@ export class TodoList{
         
         //operador ternario
 
-        this.todos=(localStorage.getItem('todo')) ? JSON.parse(localStorage.getItem('todo')) : []; 
+        this.todos=(localStorage.getItem('todo'))
+                            ? JSON.parse(localStorage.getItem('todo'))
+                             : []; 
 
     }
 }
